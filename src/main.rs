@@ -197,8 +197,8 @@ impl Team {
 
         Team::get_team_traits(&mut active_traits, &mut wasted_traits, &mut total_wasted_traits, &team, &traits, &unit_traits, &wastes);
         let mut total_cost = 0;
-        let mut max_cost = unit_with_max_cost(&team, &costs, &champs);
-        let mut min_cost = unit_with_min_cost(&team, &costs, &champs);
+        let mut max_cost = Self::unit_with_max_cost(&team, &costs, &champs);
+        let mut min_cost = Self::unit_with_min_cost(&team, &costs, &champs);
         let mut average_cost = 0.0;
         Team::get_team_costs(&mut total_cost, &mut max_cost, &mut min_cost, &mut average_cost, &team, &champs, &costs);
         return Team::new(str_team, size, active_traits, wasted_traits, total_wasted_traits, total_cost, max_cost, min_cost, average_cost);
